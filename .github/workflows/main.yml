@@ -40,6 +40,10 @@ jobs:
 
       - name: Install JS dependencies
         run: |
+          echo "::group::Show info for NPM, etc"
+          which npm
+          npm --version
+          echo "::endgroup::"
           (cd electron && npm clean-install)
           (cd electron/ui && npm clean-install)
 
