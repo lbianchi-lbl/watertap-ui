@@ -4,6 +4,11 @@ on:
   push:
   pull_request:
 
+defaults:
+  run:
+    # -l: use login shell (required when using Conda)
+    shell: bash -l {0}
+
 jobs:
   component_e2e_testing:
     name: E2E testing (${{ matrix.os }})
