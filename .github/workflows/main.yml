@@ -47,11 +47,6 @@ jobs:
           (cd electron && npm clean-install)
           (cd electron/ui && npm clean-install)
 
-      - name: Add npm bin to PATH
-        # NOTE: this is required, or executables such as cypress won't be found
-        run: |
-          echo "$(npm bin)" >> "$GITHUB_PATH"
-
       - name: get idaes extensions
         working-directory: backend/app
         run: idaes get-extensions
@@ -67,8 +62,9 @@ jobs:
       - name: Cypress e2e tests
         working-directory: electron
         run: |
-          which cypress ; cypress --version
-          cypress run
+          echo "$(npm bin)"
+          ls -l "$(npm bin)"
+          $(npm bin)/cypress run
 
       - name: Upload artifact for screenshots & videos
         uses: actions/upload-artifact@v3
