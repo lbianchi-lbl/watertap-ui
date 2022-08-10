@@ -62,9 +62,8 @@ jobs:
       - name: Cypress e2e tests
         working-directory: electron
         run: |
-          which npx ; npx --version
-          which cypress ; cypress --version
-          npx cypress run
+          # which cypress ; cypress --version
+          cypress run
 
       - name: Upload artifact for screenshots & videos
         uses: actions/upload-artifact@v3
