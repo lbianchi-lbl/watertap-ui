@@ -7,4 +7,4 @@ dependencies:
   - nodejs=16
   - pip:
     - -r backend/requirements.txt
-    - git+https://github.com/watertap-org/watertap@main
+    - git+https://github.com/watertap-org/watertap@17504c91a311298a848b1e92dcab64f4acdbbc3c
