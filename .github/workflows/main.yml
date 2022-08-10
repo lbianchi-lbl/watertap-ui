@@ -61,6 +61,7 @@ jobs:
 
       - name: Cypress e2e tests
         working-directory: electron
+        timeout-minutes: 15
         run: |
           echo "$(npm bin)"
           ls -l "$(npm bin)"
